@@ -1,9 +1,20 @@
 #!/bin/bash
-# ******************************************
+# ***************************************************************
 # Program: Install (L)AMP Stack and PHPMyAdmin on Ubuntu/Debian
 # Author: skpaul82 <hello@skpaul.me>
 # Date: 04-06-2018
-# ******************************************
+# 
+# =======================================================
+# 
+# How to run this AMP and phpMyAdmin installation script?
+#  1 open the terminal (Ctrl+Alt+T)
+#  2 And type/copy-paste following 4 lines of commands
+#	cd ~
+#	wget https://raw.githubusercontent.com/skpaul82/DevOps_Life_Automation/master/install_LAMP_and_PHPMyAdmin_on_ubuntu_linux.sh
+#	chmod -x ./install_LAMP_and_PHPMyAdmin_on_ubuntu_linux.sh
+#	bash ./install_LAMP_and_PHPMyAdmin_on_ubuntu_linux.sh
+#
+# ***************************************************************
 
 # Colors for notification and pregress text info
 Color_Reset='\033[0m'	#Text color reset
