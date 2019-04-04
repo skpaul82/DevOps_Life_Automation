@@ -39,7 +39,8 @@ echo -e "$Cyan \n Installing apache2.. $Color_Reset"
 sudo apt-get install apache2 apache2-utils
 echo -e "$Purple \n Setting apache2 auto start on start.. $Color_Reset"
 # auto start on restart
-sudo ctl enable apache2
+sudo systemctl enable apache2
+#sudo ufw allow 'Apache Full'
 echo -e "$Purple \n Starting apache2 server.. $Color_Reset"
 # start apache server
 sudo systemctl start apache2
@@ -56,7 +57,8 @@ echo -e "$Green \n MySQL has been successfully installed. $Color_Reset"
 
 echo -e "$Cyan \n Installing php7.0 and modules .. $Color_Reset"
 # install php7.0
-sudo apt-get install php7.0 php7.0-mysql libapache2-mod-php7.0 php7.0-cli php7.0-cgi php7.0-gd
+sudo apt-get install php7.0 php7.0-mysql libapache2-mod-php7.0 php7.0-cli php7.0-cgi php7.0-gd php7.0-soap php7.0-curl
+# php7.0-zip
 echo -e "$Green \n PHP7.0 and modules has been successfully installed. $Color_Reset"
 
 echo -e "$Yellow \n AMP installation DONE. $Color_Reset"
@@ -83,3 +85,17 @@ sudo service apache2 restart
 #sudo /etc/init.d/apache2 restart
 echo -e "$Green \n Everything is successfully completed. Now check browser. $Color_Reset"
 echo -e "$Red \n Thank You for using this script, Please share this script with your friends too  - skpaul82 :). $Color_Reset"
+
+echo -e "$Red \n If PhpMyAdmin is not accessable then follow this $Color_Reset"
+echo -e "$Red \n open /etc/apache2/apache2.conf by sudo nano /etc/apache2/apache2.conf $Color_Reset"
+echo -e "$Red \n and add these two lines at the end of the file $Color_Reset"
+echo -e "$Green \n #phpMyAdmin Configuration \n Include /etc/phpmyadmin/apache.conf $Color_Reset"
+echo -e "$Green \n Now restart the server by sudo service apache2 restart $Color_Reset"
+
+
+
+echo -e "$Cyan \n Now Installing composer.. $Color_Reset"
+# install phpmyadmin
+sudo apt-get install composer
+#select server - apache2
+echo -e "$Green \n composer has been successfully installed. $Color_Reset"
