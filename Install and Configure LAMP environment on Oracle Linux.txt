@@ -1,0 +1,53 @@
+#install and configure LAMP on Oracle Linux
+
+yum update
+
+#install nano
+yum -y install nano
+
+
+#install apache2
+sudo yum install httpd
+
+# Start apache2
+sudo service httpd start
+
+# Insatall mysql-server
+sudo yum install mysql-server
+# Start mysql
+sudo service mysql start
+#Secure mysql by setting password
+sudo /usr/bin/mysql_secure_installation
+
+# Install php
+yum install php php-mysql
+
+#php --version
+#sudo yum remove php php-mysql
+
+create a file, update file permission and check server
+echo "<?php phpinfo(); ?>" > /var/www/html/phpinfo.php
+chown -R apache:apache /var/www/html/phpinfo.php
+
+# Restart apache2 server
+service httpd restart
+
+
+# install wget package
+yum install -y wget
+
+#update php version to 7
+wget -q http://rpms.remirepo.net/enterprise/remi-release-7.rpm
+wget -q https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+
+# install utils for yum-config-manager
+yum install yum-utils
+
+
+
+
+
+
+// other commands
+yum clear all
+yum update
