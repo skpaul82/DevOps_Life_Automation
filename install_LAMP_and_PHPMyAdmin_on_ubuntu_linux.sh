@@ -3,6 +3,7 @@
 # Program: Install (L)AMP Stack and PHPMyAdmin on Ubuntu/Debian
 # Author: skpaul82 <hello@skpaul.me>
 # Date: 04-06-2018
+# Last Update: 18-07-2019
 # 
 # =======================================================
 # 
@@ -55,18 +56,21 @@ sudo mysql_secure_installation
 echo -e "$Green \n MySQL has been successfully installed. $Color_Reset"
 
 
-echo -e "$Cyan \n Installing php7.0 and modules .. $Color_Reset"
-# install php7.0
-sudo apt-get install php7.0 php7.0-mysql libapache2-mod-php7.0 php7.0-cli php7.0-cgi php7.0-gd php7.0-soap php7.0-curl
-# php7.0-zip
-echo -e "$Green \n PHP7.0 and modules has been successfully installed. $Color_Reset"
+echo -e "$Cyan \n Installing php7.2 and modules .. $Color_Reset"
+# install php7.2
+sudo apt-get install php7.2 php7.2-mysql libapache2-mod-php7.2 php7.2-cli php7.2-cgi php7.2-gd php7.2-soap php7.2-curl
+# php7.2-zip
+echo -e "$Green \n PHP7.2 and modules has been successfully installed. $Color_Reset"
 
 echo -e "$Yellow \n AMP installation DONE. $Color_Reset"
 
 
 echo -e "$Cyan \n Creating a test file for testing installation in /var/www/html/ location.. $Color_Reset"
 #verify LAMP stack, create a test file and check on browser
+# sudo printf "<?php\necho 'Hellooooo.. world<br>';\nphpinfo();\n?>" > /var/www/html/test.php;
+sudo chmod 777 /var/www/html/
 sudo printf "<?php\necho 'Hellooooo.. world<br>';\nphpinfo();\n?>" > /var/www/html/test.php;
+sudo chmod 755 /var/www/html/
 #sudo printf "<?php\nphpinfo();\n?>" > /var/www/html/info.php;
 echo -e "$Green \n test.php file created successfully, Please check on browser. $Color_Reset"
 
@@ -95,7 +99,13 @@ echo -e "$Green \n Now restart the server by sudo service apache2 restart $Color
 
 
 echo -e "$Cyan \n Now Installing composer.. $Color_Reset"
-# install phpmyadmin
+# install composer
 sudo apt-get install composer
 #select server - apache2
 echo -e "$Green \n composer has been successfully installed. $Color_Reset"
+
+echo -e "$Cyan \n Now Installing git.. $Color_Reset"
+# install git
+sudo apt-get install git
+#select server - apache2
+echo -e "$Green \n git has been successfully installed. $Color_Reset"
